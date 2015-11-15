@@ -3,7 +3,7 @@ var load = require('express-load');
 var cookieParser = require('cookie-parser');
 var expressSession = require('express-session');
 var bodyParser = require('body-parser');
-var methodOverride = require('method-override');
+//var methodOverride = require('method-override');
 
 var app = express();
 
@@ -24,7 +24,7 @@ app.use(expressSession({
     resave: true,
     saveUninitialized: true
 }));
-app.use(methodOverride);
+//app.use(methodOverride);
 app.use(express.static(__dirname + 'public'));
 
 load('models').then('controllers').then('routes').into(app);

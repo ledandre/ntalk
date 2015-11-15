@@ -3,7 +3,7 @@ module.exports = function(app) {
 		index: function(request, response) {
 			var usuario = request.session.usuario;
 			var contatos = usuario.contatos;
-			var params = {usuario: usuario};
+			var params = {usuario: usuario, contatos: contatos};
 
 			response.render('contatos/index', params);
 		},
